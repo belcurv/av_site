@@ -1,0 +1,13 @@
+<div>
+    <h1>{{vm.hello}} from Stock page</h1>
+    
+    <form id="input-form" action="submit">
+        <label for="part-number">Part Number: </label>
+        <input type="text" id="part-number" pattern=".{3,}" required
+               title="3 characters minimum">
+        <input type="submit" id="part-number-sumbit" value="Fetch">
+    </form>
+    
+    <div id="part-number-data"></div>
+    
+</div>

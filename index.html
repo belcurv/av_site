@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="avtk-app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    
+    <title>Company Website</title>
+    
+    <!-- ========================== STYLESHEETS =========================== -->
+    <link rel="stylesheet" href="client/css/app.css">
+    
+</head>
+<body>
+    
+    <header>
+        <avtk-header></avtk-header>
+    </header>
+
+    <article>
+        <div ng-view></div>
+    </article>
+
+    <footer>
+        <avtk-footer></avtk-footer>
+    </footer>
+    
+    <!-- =========================== JAVASCRIPT =========================== -->
+    <script src="client/lib/angular.min.js"></script>
+    <script src="client/lib/angular-route.min.js"></script>
+    <script src="client/modules/app.js"></script>
+    <script src="client/modules/routes.js"></script>
+    <script src="client/controllers/avtk.ctrl.js"></script>
+    <script src="client/controllers/avtk-stock.ctrl.js"></script>
+</body>
+</html>
