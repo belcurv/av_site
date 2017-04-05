@@ -1,18 +1,333 @@
+/* quick reset */
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+html,
 body {
-    font-family: sans-serif;
-}
-
-table {
+    height: 100%;
     width: 100%;
-    border-collapse: collapse;
 }
 
-th {
-    text-align: left;
-    border-bottom: 2px solid #333;
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    background: #fff;
+    color: black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
 
-th,
-td {
-    padding: .5em;
+/* anti-iOS Safari / Webkit tweak */
+textarea,
+input.text,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+input[type="date"],
+input[type="number"],
+.input-checkbox {
+    -webkit-appearance: none;
+    border-radius: 0;
+    margin: 0;
+}
+
+
+/* Remove number spinner from Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+/* Remove number spinner from Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    /* Removes leftover margin */
+}
+
+header,
+article,
+input,
+footer,
+#navIcons,
+#navIcons a,
+.container {
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 80px;
+    margin: 0;
+    padding: 25px;
+    background: rgba(0,0,0,.2);
+    color: #000;
+    z-index: 1; /* must be > 0 or Glyphicons show above header */
+}
+
+header > nav {
+    flex: none;
+}
+
+header h1,
+header h4,
+#navIcons a {
+    display: inline-block;
+}
+
+header > avtk-header {
+    flex: 1 auto;
+}
+
+
+header h4 {
+    font-size: 2em;
+}
+
+header a {
+    outline: 0;
+    text-decoration: none;
+}
+
+
+article {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 0.25em;
+    width: 100%;
+    
+    /* push article beneath header */
+    margin-top: 54px;
+    
+}
+
+hr {
+    background-color:#eee;
+    color:#eee;
+    border-width:0;
+    height:1px;
+    line-height:0;
+    page-break-after:always;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+input {
+    min-width: 1em;
+}
+
+p, ul, li {
+    font-weight: normal;
+    font-size: 15px;
+}
+
+p {
+    margin: .5em 0;
+}
+
+alert-message {
+    display: block;
+    font-weight: normal;
+    font-size: 12px;
+    font-style: italic;
+    text-align: right;
+    color: #666666;
+    margin: .75em 0;
+}
+
+ul {
+    margin: 0 1em 1em 1em;
+}
+
+pre {
+    font-weight: normal;
+    font-size: 12px;
+}
+
+section {
+    -webkit-box-flex: 0;
+    -ms-flex: 0;
+    flex: 0;
+    padding: 0.5em;
+}
+
+h4 {
+    display: inline-block;
+    height: 1.1em;
+    margin: 0;
+    padding: 0.5em 0 0.5em 0;
+    color: #404040;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+a {
+    color: inherit;
+}
+
+.content-box h1 {
+    display: inline-block;
+    margin: 0;
+    padding: 0.25em 0;
+    color: #404040;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.content-box h1:not(:first-child) {
+    margin-left: 10px;
+}
+
+/* use with Glyphicon toggle */
+.icon-button {
+    cursor: pointer;
+/*    color: #bebbb5;*/
+}
+
+.help {
+    padding: 1em;
+    margin: .25em 0 1em 0;
+    background: #FFF;
+    border: 1px solid rgba(190, 187, 183, 1);
+    box-shadow: 0 0 5px rgba(190, 187, 183, 1);
+}
+
+footer {
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+    padding: 0.85em 0;
+    background: #404040;
+    color: #999;
+    font-size: 0.85em;
+    text-align: center;
+}
+
+.inputButton {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    background-color: rgba(255, 178, 73, 0.35);
+    color: black;
+    border: 1px solid rgba(147, 128, 108, 0.25);
+    padding: 0.5em 0.75em;
+    font: inherit;
+    font-weight: normal;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.inputButton:hover {
+    background-color: rgb(95, 158, 160);
+    color: white;
+}
+
+.footer-credit {
+    display: inline-block;
+    margin: .25em;
+    vertical-align: middle;
+}
+
+.footer-social {
+    display: inline-block;
+    vertical-align: middle;
+    height: 20px;
+    width: 106px;
+}
+
+footer a {
+    color: #e5e5e5;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Greater than 640x, show nav text & hide icons */
+@media all and (min-width: 640px) {
+    #navText {
+        display: inline-block;
+    }
+    
+    #navIcons {
+        display: none;
+    }
+        
+    .cc-table td {
+        padding: 0.5rem;
+    }
+    
+    .cc-table th {
+        padding: 0.15rem 0.5rem;
+    }
+    
+}
+
+/* Tiny screens: narrow nav icon spacing & full width content */
+@media all and (max-width: 360px) {
+    
+    .content-box {
+        padding: .25em .5em;
+    }
+
+    #navIcons a {
+        padding: 15px .5em;
+    }
+    
+    article {
+        padding: 0 0 0.5em 0;
+    }
+    
+    section {
+        padding: 0.5em 0 0 0;
+    }
+    
+    .container {
+        padding: 0;
+    }
+    
+    footer p {
+        font-size: 13px;
+    }
+    
+    .cc-table th,
+    .cc-table td {
+        padding: 0.5rem 0.1rem;
+    }
+    
+    .sm-col-hide {
+        display: none;
+        width: 0;
+        visibility: collapse;
+    }
 }
